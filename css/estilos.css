@@ -1,7 +1,19 @@
 #fotoperfil{
-	margin-top: 70px
+	margin-top: 70px;
 }
 
 #presentacion{
-	margin-top: 70px
+	margin-top: 70px;
+	margin-right: 0px;
+	padding-right: 0px;
+	color:white;
+}
+
+.recuadro {
+  height: 300px;
+  overflow: auto;
+}
+
+#cuerpo {
+	margin-right: 10px;
 }
