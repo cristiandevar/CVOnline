@@ -1,19 +1,45 @@
-#fotoperfil{
-	margin-top: 70px;
+body{
+	background-color: #F0FFFF;
+}
+#header{
+	margin: 50px 0px 0px 0px;
+	padding: 0px;
+	
 }
 
 #presentacion{
-	margin-top: 70px;
-	margin-right: 0px;
-	padding-right: 0px;
 	color:white;
-}
-
-.recuadro {
-  height: 300px;
-  overflow: auto;
+	max-height: auto;
 }
 
 #cuerpo {
-	margin-right: 10px;
+	margin-left: 5px;
+}
+
+.recuadro {
+	margin-top: 10px;
+	height: 280px;
+	overflow: scroll;
+}
+
+@media only screen and (max-width: 600px){
+	
+	div{
+		max-width: 100%;
+	}
+	#fotoperfil{
+		align: center;
+	}
+	#presentacion,h2{
+		margin-left: 10px;
+		font-size: large;
+	}
+	#indice{
+		height: auto;
+		overflow: auto;
+	}
+	#cuerpo{
+		height: max-height;
+	}
+
 }
