@@ -30,10 +30,15 @@ body{
 	#fotoperfil{
 		align: center;
 	}
-	#presentacion,h2{
+	#presentacion.h1{
+		text-align: left;
 		margin-left: 10px;
 		font-size: large;
 	}
+	 #presentacion.h2{
+	 	text-align: left;
+	 	font-size: small;
+	 }
 	#indice{
 		height: auto;
 		overflow: auto;

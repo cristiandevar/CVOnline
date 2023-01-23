@@ -6,6 +6,7 @@ pagina_inicio();
 document.getElementById("pagina-inicio").addEventListener('click',pagina_inicio);
 document.getElementById("datos-personales").addEventListener('click',datos_personales);
 document.getElementById("linea-tiempo").addEventListener('click',linea_tiempo);
+document.getElementById("contacto").addEventListener('click',contactar);
 
 
 
@@ -44,6 +45,7 @@ function carga_items(cant,lista){
 function pagina_inicio(){
 	var elemento;
 
+	//cerramos el menu desplegable e iniciamos el indice
 	limpia("lista-indice");
 	limpia("cuerpo");
 
@@ -77,7 +79,7 @@ function pagina_inicio(){
 
 function datos_personales(){
 	var elemento;
-
+	//cerramos el menu desplegable e iniciamos el indice
 	cerrar_menu();
 
 	limpia("lista-indice");
@@ -85,30 +87,41 @@ function datos_personales(){
 
 	crea_indice();
 
-	crea_inserta("li","item1","","lista-indice");
-	crea_inserta("a","link1","Mi persona","item1");
+	//carga 2 items al indice
+	carga_items(2,"lista-indice");
+	//reellena con 2 links hacia dadtos personales y haabilidaades
 	elemento=document.getElementById("item1");
 	elemento.class="nav-item";
+	elemento.id="persona";
+	crea_inserta("a","link1","Mi persona","persona");
+	
 	elemento=document.getElementById("link1");
 	elemento.class="nav-link";
 	elemento.href="#mi-persona";
 
-	crea_inserta("li","item2","","lista-indice");
-	crea_inserta("a","link2","Mis Habilidades","item2");
+
 	elemento=document.getElementById("item2");
 	elemento.class="nav-item";
+	elemento.id="habilidades";
+	crea_inserta("a","link2","Mis Habilidades","habilidades");
+	
 	elemento=document.getElementById("link2");
 	elemento.class="nav-link";
 	elemento.href="#mis-habilidades";
 
+	//Crea Tittulo y enlista los datos personales
 	crea_inserta("h1","mi-persona","Mi persona","cuerpo");
 	crea_inserta("ul","lista-mi-persona","","cuerpo");
-	crea_inserta("li","ayn","Nomnbre: Clinton Brat Gomez","lista-mi-persona");
-	crea_inserta("li","edad","Edad:\t27 años","lista-mi-persona");
-	crea_inserta("li","direccion","Direccion:\t3370 James St","lista-mi-persona");
-	crea_inserta("li","fijo","Telef Fijo:\t(868) 266-6163","lista-mi-persona");
-	crea_inserta("li","cel","Telef Cel:\t(111) 222-3344","lista-mi-persona");
+
+	carga_items(6,"lista-mi-persona");
+	document.getElementById("item1").innerHTML="Nomnbre: Clinton Brat Gomez";
+	document.getElementById("item2").innerHTML="Edad:\t27 años";
+	document.getElementById("item3").innerHTML="Direccion:\t3370 James St";
+	document.getElementById("item4").innerHTML="Telef Fijo:\t(868) 266-6163";
+	document.getElementById("item5").innerHTML="Telef Cel:\t(111) 222-3344";
+	document.getElementById("item6").innerHTML="Correo:\tclinton.gomez@example.com";
 	
+	//Crera titulos, subtitulos y describe habilidades
 	crea_inserta("h1","mis-habilidades","Mis habilidades","cuerpo");
 	crea_inserta("h2","","Habnilidad1","cuerpo");
 	crea_inserta("p","","Explicacion1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
@@ -121,8 +134,8 @@ function datos_personales(){
 }
 
 function linea_tiempo(){
-	var elemento,item;
-
+	var cargo,periodo,descripcion;
+	//cerramos el menu desplegable e iniciamos el indice 
 	cerrar_menu();
 
 	limpia("lista-indice");
@@ -130,20 +143,115 @@ function linea_tiempo(){
 
 	crea_indice();
 
+	//Cargamos el indice con items representando los años que queremos mostrar, en nuestro caaso son 5
 	carga_items(5,"lista-indice");
-
+	//Creamos los links 
 	crea_inserta("a","anio1","2015","item1");
-	document.getElementById("anio1").href="#2015";
+	document.getElementById("anio1").href="#cargo1";
 	crea_inserta("a","anio2","2016","item2");
-	document.getElementById("anio2").href="#2016";
+	document.getElementById("anio2").href="#cargo2";
 	crea_inserta("a","anio3","2018","item3");
-	document.getElementById("anio3").href="#2018";
+	document.getElementById("anio3").href="#cargo3";
 	crea_inserta("a","anio4","2019","item4");
-	document.getElementById("anio4").href="#2019";
+	document.getElementById("anio4").href="#cargo4";
 	crea_inserta("a","anio5","2022","item5");
-	document.getElementById("anio5").href="#2022";
+	document.getElementById("anio5").href="#cargo5";
+	//Creamos los titulos, subtitulos y las descripcciones de los cargos
+	for (var i = 1; i <= 5; i++) {
+		crea_inserta("h2","cargo"+i,"","cuerpo");
+		crea_inserta("h4","periodo"+i,"","cuerpo");
+		crea_inserta("p","descripcion"+i,"","cuerpo");
+	}
+	//Modificamos el contenido de los cargos perioddos y descripciones
+	cargo="Mantenimiento y Documentacion - Emprendimiento";
+	periodo="Agosto - Diciembre (2015)";
+	descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet rhoncus nisi. Fusce ultrices lorem vel mi pretium efficitur. Nulla nec quam risus. Fusce venenatis ante nulla, at maximus ligula porttitor eu. In hendrerit, dolor eu elementum laoreet, sem risus pretium ante, vitae rhoncus lorem nulla quis nibh. Proin turpis sem, sagittis eu volutpat sed, efficitur in augue. Morbi tristique ipsum mauris, ut suscipit est congue vitae. Maecenas convallis tortor sit amet ligula sagittis pulvinar. Aliquam et fermentum tortor. Proin sollicitudin ligula id commodo posuere. Donec bibendum eros sit amet justo tristique mollis. Sed non fringilla velit, a ullamcorper nunc. Donec dictum suscipit libero in vehicula."
+	document.getElementById("cargo1").innerHTML=cargo;
+	document.getElementById("periodo1").innerHTML=periodo;
+	document.getElementById("descripcion1").innerHTML=descripcion;
 
-	
+	cargo="Desarrollo en Java - Emprendimiento";
+	periodo="Mayo - Julio (2016)";
+	descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet rhoncus nisi. Fusce ultrices lorem vel mi pretium efficitur. Nulla nec quam risus. Fusce venenatis ante nulla, at maximus ligula porttitor eu. In hendrerit, dolor eu elementum laoreet, sem risus pretium ante, vitae rhoncus lorem nulla quis nibh. Proin turpis sem, sagittis eu volutpat sed, efficitur in augue. Morbi tristique ipsum mauris, ut suscipit est congue vitae. Maecenas convallis tortor sit amet ligula sagittis pulvinar. Aliquam et fermentum tortor. Proin sollicitudin ligula id commodo posuere. Donec bibendum eros sit amet justo tristique mollis. Sed non fringilla velit, a ullamcorper nunc. Donec dictum suscipit libero in vehicula.";
+	document.getElementById("cargo2").innerHTML=cargo;
+	document.getElementById("periodo2").innerHTML=periodo;
+	document.getElementById("descripcion2").innerHTML=descripcion;
+
+	cargo="Mantenimiento - Biblioteca UNSa";
+	periodo="Marzo - Julio (2018)";
+	descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet rhoncus nisi. Fusce ultrices lorem vel mi pretium efficitur. Nulla nec quam risus. Fusce venenatis ante nulla, at maximus ligula porttitor eu. In hendrerit, dolor eu elementum laoreet, sem risus pretium ante, vitae rhoncus lorem nulla quis nibh. Proin turpis sem, sagittis eu volutpat sed, efficitur in augue. Morbi tristique ipsum mauris, ut suscipit est congue vitae. Maecenas convallis tortor sit amet ligula sagittis pulvinar. Aliquam et fermentum tortor. Proin sollicitudin ligula id commodo posuere. Donec bibendum eros sit amet justo tristique mollis. Sed non fringilla velit, a ullamcorper nunc. Donec dictum suscipit libero in vehicula.";
+	document.getElementById("cargo3").innerHTML=cargo;
+	document.getElementById("periodo3").innerHTML=periodo;
+	document.getElementById("descripcion3").innerHTML=descripcion;
+
+	cargo="Auxiliar - Programacion  Numerica";
+	periodo="Agosto - Noviembre (2019)";
+	descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet rhoncus nisi. Fusce ultrices lorem vel mi pretium efficitur. Nulla nec quam risus. Fusce venenatis ante nulla, at maximus ligula porttitor eu. In hendrerit, dolor eu elementum laoreet, sem risus pretium ante, vitae rhoncus lorem nulla quis nibh. Proin turpis sem, sagittis eu volutpat sed, efficitur in augue. Morbi tristique ipsum mauris, ut suscipit est congue vitae. Maecenas convallis tortor sit amet ligula sagittis pulvinar. Aliquam et fermentum tortor. Proin sollicitudin ligula id commodo posuere. Donec bibendum eros sit amet justo tristique mollis. Sed non fringilla velit, a ullamcorper nunc. Donec dictum suscipit libero in vehicula.";
+	document.getElementById("cargo4").innerHTML=cargo;
+	document.getElementById("periodo4").innerHTML=periodo;
+	document.getElementById("descripcion4").innerHTML=descripcion;
+
+	cargo="Desarrollador Web - 'Techman'";
+	periodo="Abril - Septiembre (2022s)";
+	descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet rhoncus nisi. Fusce ultrices lorem vel mi pretium efficitur. Nulla nec quam risus. Fusce venenatis ante nulla, at maximus ligula porttitor eu. In hendrerit, dolor eu elementum laoreet, sem risus pretium ante, vitae rhoncus lorem nulla quis nibh. Proin turpis sem, sagittis eu volutpat sed, efficitur in augue. Morbi tristique ipsum mauris, ut suscipit est congue vitae. Maecenas convallis tortor sit amet ligula sagittis pulvinar. Aliquam et fermentum tortor. Proin sollicitudin ligula id commodo posuere. Donec bibendum eros sit amet justo tristique mollis. Sed non fringilla velit, a ullamcorper nunc. Donec dictum suscipit libero in vehicula.";
+	document.getElementById("cargo5").innerHTML=cargo;
+	document.getElementById("periodo5").innerHTML=periodo;
+	document.getElementById("descripcion5").innerHTML=descripcion;
 }
+
+function contactar(){
+	//Cerrar menu, limpia indice y cuerpo, por ultimo se modifica convenientemente 
+	cerrar_menu();
+	limpia("lista-indice");
+	limpia("cuerpo");
+	crea_indice();
+
+	//Se agregaran dos items, para contactarse por correo o por wpp
+	carga_items(2,"lista-indice");
+	
+	//Se cargan los links
+	crea_inserta("a","envia-correo","Enviar Correo","item1");
+	document.getElementById("item1").href="#correo";
+	crea_inserta("a","envia-wpp","Enviar Wpp","item2");
+	document.getElementById("item2").href="#wpp";
+
+	//Se creara un formulario y un area donde pondremos enlaces
+	crea_inserta("form","formulario","","cuerpo");
+	//creamos un titulo para el formulario y un parrafo indicativo
+	crea_inserta("h2","correo","Enviame un correo y contactame","formulario");
+	crea_inserta("p","","En el formulario hay campos oobligatorios *","formulario");
+
+	for(var i = 1; i<=3; i++){
+		crea_inserta("p","parrafo"+i,"","formulario");
+		crea_inserta("label","etiqueta"+i,"","parrafo"+i);
+		crea_inserta("span","contenido"+i,"","etiqueta"+i);
+		crea_inserta("strong","strong"+i,"","etiqueta"+i);
+		crea_inserta("abbr","abbr"+i,"*","strong"+i);
+		crea_inserta("input","entrada"+i,"","parrafo"+i);
+
+		//Asignamos los atributos correspondientes
+
+		document.getElementById("etiqueta"+i).for=("entrada"+i);
+		document.getElementById("abbr"+i).title="required";
+		document.getElementById("entrada"+i).name="name"+i;
+	}
+
+	//Asignamos contenido para facilitar la interaccion con el formulario
+	document.getElementById("contenido1").innerHTML="Tu Nombre";
+	document.getElementById("contenido2").innerHTML="Tu Correo";
+	document.getElementById("contenido3").innerHTML="Tu Mensaje";
+
+}
+
+/**
+<p>
+		      <label for="name">
+		        <span>Nombre:</span>
+		        <strong><abbr title="required">*</abbr></strong>
+		      </label>
+		      <input type="text" id="name" name="username">
+		    </p>
+*/
+
 
 
