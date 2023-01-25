@@ -30,11 +30,8 @@ function limpia(id_elemento){
 }
 
 function crea_indice(){
-	crea_inserta("h3","titulo-indice","Indice ","lista-indice");
-	crea_inserta("a","auxiliar-indice","","lista-indice");
-	document.getElementById("auxiliar-indice").href="#";
-
-	crea_inserta("i","icono-indice","","auxiliar-indice");
+	
+	crea_inserta("h3","titulo-indice","Indice","lista-indice");
 	crea_inserta("hr","","","lista-indice");
 }
 
@@ -47,7 +44,7 @@ function carga_items(cant,lista){
 }
 
 function pagina_inicio(){
-	var elemento;
+	var elemento,texto;
 
 	//cerramos el menu desplegable e iniciamos el indice
 	limpia("lista-indice");
@@ -56,6 +53,7 @@ function pagina_inicio(){
 	crea_indice();
 
 	crea_inserta("li","item1","","lista-indice");
+	crea_inserta("i","icono-item1","","item1");
 	crea_inserta("a","link1","Bienvenido","item1");
 	elemento=document.getElementById("item1");
 	elemento.class="nav-item";
@@ -64,6 +62,7 @@ function pagina_inicio(){
 	elemento.href="#bienvenido";
 
 	crea_inserta("li","item2","","lista-indice");
+	crea_inserta("i","icono-item2","","item2");
 	crea_inserta("a","link2","Autor","item2");
 	elemento=document.getElementById("item2");
 	elemento.class="nav-item";
@@ -73,9 +72,18 @@ function pagina_inicio(){
 	
 
 
+	//modificamos los iconos de bienvenidos y autor
+	document.getElementById("icono-item1").class="fa-solid fa-hand";
+	document.getElementById("icono-item2").class="fa-solid fa-code";
+
+
 	crea_inserta("h1","bienvenido","Bienvenido/a a 'Mi CV Onnline'","cuerpo");
 	crea_inserta("h2","","Proyecto final en FrontEnd","cuerpo");
-	crea_inserta("p","","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu rutrum diam, nec consectetur ante. Etiam interdum justo et ante venenatis, eu venenatis justo suscipit. Nulla rhoncus sit amet turpis in malesuada. Proin ultrices aliquet sem, in tristique lectus. Ut ac magna tortor. Phasellus dapibus odio non venenatis consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras sed nisl sed sapien posuere porta. Nullam ultricies eros at ultrices placerat. Donec sollicitudin, est ac sollicitudin tempus, turpis felis tristique orci, eget consectetur dolor sem feugiat mi. Vivamus sem ante, interdum quis fringilla at, rutrum scelerisque sem. Curabitur tempus lectus vitae mauris luctus lobortis. Suspendisse potenti. Donec diam arcu, tristique sed erat gravida, suscipit ultrices dui. Maecenas vehicula magna non sodales finibus. Etiam porta nulla in urna feugiat scelerisque. Ut id sollicitudin ligula. Quisque in nunc in enim scelerisque ultrices. Cras nec auctor nulla. Nunc efficitur bibendum orci tincidunt faucibus. Ut imperdiet feugiat ante non posuere. Nunc tellus dui, vestibulum quis lorem vel, vulputate dapibus eros. Curabitur molestie sapien in nibh egestas, at venenatis nisl hendrerit. Nullam pharetra sollicitudin faucibus. Integer mollis maximus est eu cursus. Etiam libero lectus, euismod eu erat in, sodales tincidunt ligula. Morbi ullamcorper massa ac mi cursus malesuada. Vestibulum feugiat fermentum magna, nec facilisis mi. Vestibulum blandit auctor finibus","cuerpo");
+	crea_inserta("p","parrafo1","","cuerpo");
+	texto="Aqui iria un texto de bienvenida, dando a conocer el porque de la pagina, para quien esta dirigida, etc. Nosotros utilizaremos un texto generado de la pagiga https://www.lipsum.com/. Tambien recuerde que si quiere agregar saltos de linea debe que utilizar el elemento 'br' para que surja efecto en el documento HTML";
+	texto+="<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu rutrum diam, nec consectetur ante. Etiam interdum justo et ante venenatis, eu venenatis justo suscipit. Nulla rhoncus sit amet turpis in malesuada. Proin ultrices aliquet sem, in tristique lectus. Ut ac magna tortor. Phasellus dapibus odio non venenatis consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras sed nisl sed sapien posuere porta. Nullam ultricies eros at ultrices placerat. Donec sollicitudin, est ac sollicitudin tempus, turpis felis tristique orci, eget consectetur dolor sem feugiat mi. Vivamus sem ante, interdum quis fringilla at, rutrum scelerisque sem. Curabitur tempus lectus vitae mauris luctus lobortis. Suspendisse potenti. Donec diam arcu, tristique sed erat gravida, suscipit ultrices dui. Maecenas vehicula magna non sodales finibus. Etiam porta nulla in urna feugiat scelerisque. Ut id sollicitudin ligula. Quisque in nunc in enim scelerisque ultrices. Cras nec auctor nulla. Nunc efficitur bibendum orci tincidunt faucibus. Ut imperdiet feugiat ante non posuere. Nunc tellus dui, vestibulum quis lorem vel, vulputate dapibus eros. Curabitur molestie sapien in nibh egestas, at venenatis nisl hendrerit. Nullam pharetra sollicitudin faucibus. Integer mollis maximus est eu cursus. Etiam libero lectus, euismod eu erat in, sodales tincidunt ligula. Morbi ullamcorper massa ac mi cursus malesuada. Vestibulum feugiat fermentum magna, nec facilisis mi. Vestibulum blandit auctor finibus";
+	document.getElementById("parrafo1").innerHTML=texto;
+
 
 	crea_inserta("h1","autor","Desarrollado por Franco Cristian","cuerpo");
 	crea_inserta("p","","Año 2023, Febrero 1","cuerpo");
@@ -90,16 +98,12 @@ function datos_personales(){
 	limpia("cuerpo");
 
 	crea_indice();
-	//agrego icono
-	document.getElementById("icono-indice").class="fa-solid fa-user";
-	document.getElementById("icono-indice").innerHTML="algo";
-
 
 	//carga 2 items al indice
 	carga_items(2,"lista-indice");
-	//reellena con 2 links hacia dadtos personales y haabilidaades
+	//reellena con 2 links hacia datos personales y habilidaades
 	elemento=document.getElementById("item1");
-	elemento.class="nav-item";
+	//elemento.class="nav-item";
 	elemento.id="persona";
 	crea_inserta("a","link1","Mi persona","persona");
 	
@@ -109,12 +113,12 @@ function datos_personales(){
 
 
 	elemento=document.getElementById("item2");
-	elemento.class="nav-item";
+	//elemento.class="nav-item";
 	elemento.id="habilidades";
 	crea_inserta("a","link2","Mis Habilidades","habilidades");
 	
 	elemento=document.getElementById("link2");
-	elemento.class="nav-link";
+	//elemento.class="nav-link";
 	elemento.href="#mis-habilidades";
 
 	//Crea Tittulo y enlista los datos personales
@@ -122,7 +126,7 @@ function datos_personales(){
 	crea_inserta("ul","lista-mi-persona","","cuerpo");
 
 	carga_items(6,"lista-mi-persona");
-	document.getElementById("item1").innerHTML="Nomnbre: Clinton Brat Gomez";
+	document.getElementById("item1").innerHTML="Nombre: Clinton Brat Gomez";
 	document.getElementById("item2").innerHTML="Edad:\t27 años";
 	document.getElementById("item3").innerHTML="Direccion:\t3370 James St";
 	document.getElementById("item4").innerHTML="Telef Fijo:\t(868) 266-6163";
@@ -131,14 +135,14 @@ function datos_personales(){
 	
 	//Crera titulos, subtitulos y describe habilidades
 	crea_inserta("h1","mis-habilidades","Mis habilidades","cuerpo");
-	crea_inserta("h2","","Habnilidad1","cuerpo");
+	crea_inserta("h2","","Habilidad1","cuerpo");
 	crea_inserta("p","","Explicacion1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
-	crea_inserta("h2","","Habnilidad2","cuerpo");
+	crea_inserta("h2","","Habilidad2","cuerpo");
 	crea_inserta("p","","Explicacion2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
-	crea_inserta("h2","","Habnilidad3","cuerpo");
-	crea_inserta("p","","Explicacion2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
-	crea_inserta("h2","","Habnilidad4","cuerpo");
-	crea_inserta("p","","Explicacion2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
+	crea_inserta("h2","","Habilidad3","cuerpo");
+	crea_inserta("p","","Explicacion3 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
+	crea_inserta("h2","","Habilidad4","cuerpo");
+	crea_inserta("p","","Explicacion4 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
 }
 
 function linea_tiempo(){
@@ -209,7 +213,7 @@ function linea_tiempo(){
 
 
 function contactar(){
-	var asunto="Contacto";
+	var texto;
 
 	//Cerrar menu, limpia indice y cuerpo, por ultimo se modifica convenientemente 
 	cerrar_menu();
@@ -227,19 +231,18 @@ function contactar(){
 	document.getElementById("item2").href="#wpp";
 
 	//Ponemos un link directo para chatear con el correo de la persona
-	document.getElementById("envia-correo").href="mailto:clinton.gomez@example.com?subject=Contacto-Sugerencia";
+	document.getElementById("envia-correo").href="https://mailto:clinton.gomez@example.com?subject=Contacto-Sugerencia";
 	document.getElementById("envia-correo").target="_blank";
 
-
-
-	//Ponemos un link directo para chatear con el numero de la persona
-	document.getElementById("envia-wpp").href="https://api.whatsapp.com/send/?phone=115000000";
+	//Ponemos un link directo para chatear con el numero de la persona (111) 222-3344
+	document.getElementById("envia-wpp").href="https://api.whatsapp.com/send/?phone=1112223344";
 	document.getElementById("envia-wpp").target="_blank";
 
-	crea_inserta("h2","contacto-sugerencia","Contactame o Sugiere CAmbios","cuerpo");
+	crea_inserta("h2","contacto-sugerencia","Contactame o Sugiere Cambios","cuerpo");
 	crea_inserta("p","parrafo","","cuerpo");
 
-	document.getElementById("parrafo").innerHTML="Enviame un correo o un Wpp por medio de los enlaces ubicados en el Indice, Estare agradecido y dispuesto a responder lo mas antes posible. Desde ya te agradezco la visita a este CV Onnline y espero hayas encontrado lo que buscas. Espero tus mensajes."
+	texto="Enviame un correo o un Wpp por medio de los enlaces ubicados en el Indice, Estare agradecido y dispuesto a responder lo mas antes posible. Desde ya te agradezco la visita a este CV Onnline y espero hayas encontrado lo que buscas. Espero tus mensajes.";
+	document.getElementById("parrafo").innerHTML=texto;
 
 
 
