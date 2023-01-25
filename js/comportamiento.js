@@ -30,7 +30,11 @@ function limpia(id_elemento){
 }
 
 function crea_indice(){
-	crea_inserta("h3","","Indice","lista-indice");
+	crea_inserta("h3","titulo-indice","Indice ","lista-indice");
+	crea_inserta("a","auxiliar-indice","","lista-indice");
+	document.getElementById("auxiliar-indice").href="#";
+
+	crea_inserta("i","icono-indice","","auxiliar-indice");
 	crea_inserta("hr","","","lista-indice");
 }
 
@@ -86,6 +90,10 @@ function datos_personales(){
 	limpia("cuerpo");
 
 	crea_indice();
+	//agrego icono
+	document.getElementById("icono-indice").class="fa-solid fa-user";
+	document.getElementById("icono-indice").innerHTML="algo";
+
 
 	//carga 2 items al indice
 	carga_items(2,"lista-indice");
@@ -199,7 +207,10 @@ function linea_tiempo(){
 	document.getElementById("descripcion5").innerHTML=descripcion;
 }
 
+
 function contactar(){
+	var asunto="Contacto";
+
 	//Cerrar menu, limpia indice y cuerpo, por ultimo se modifica convenientemente 
 	cerrar_menu();
 	limpia("lista-indice");
@@ -215,43 +226,100 @@ function contactar(){
 	crea_inserta("a","envia-wpp","Enviar Wpp","item2");
 	document.getElementById("item2").href="#wpp";
 
-	//Se creara un formulario y un area donde pondremos enlaces
+	//Ponemos un link directo para chatear con el correo de la persona
+	document.getElementById("envia-correo").href="mailto:clinton.gomez@example.com?subject=Contacto-Sugerencia";
+	document.getElementById("envia-correo").target="_blank";
+
+
+
+	//Ponemos un link directo para chatear con el numero de la persona
+	document.getElementById("envia-wpp").href="https://api.whatsapp.com/send/?phone=115000000";
+	document.getElementById("envia-wpp").target="_blank";
+
+	crea_inserta("h2","contacto-sugerencia","Contactame o Sugiere CAmbios","cuerpo");
+	crea_inserta("p","parrafo","","cuerpo");
+
+	document.getElementById("parrafo").innerHTML="Enviame un correo o un Wpp por medio de los enlaces ubicados en el Indice, Estare agradecido y dispuesto a responder lo mas antes posible. Desde ya te agradezco la visita a este CV Onnline y espero hayas encontrado lo que buscas. Espero tus mensajes."
+
+
+
+
+
+
+
+	/**
+
+	//Se creara un formulario
 	crea_inserta("form","formulario","","cuerpo");
 	//creamos un titulo para el formulario y un parrafo indicativo
 	crea_inserta("h2","correo","Enviame un correo y contactame","formulario");
 	crea_inserta("p","","En el formulario hay campos oobligatorios *","formulario");
 
-	for(var i = 1; i<=3; i++){
-		crea_inserta("p","parrafo"+i,"","formulario");
-		crea_inserta("label","etiqueta"+i,"","parrafo"+i);
-		crea_inserta("span","contenido"+i,"","etiqueta"+i);
-		crea_inserta("strong","strong"+i,"","etiqueta"+i);
-		crea_inserta("abbr","abbr"+i,"*","strong"+i);
-		crea_inserta("input","entrada"+i,"","parrafo"+i);
+	
+	crea_inserta("p","parrafo1","","formulario");
+	crea_inserta("label","etiqueta1","","parrafo1");
+	crea_inserta("span","contenido1","","etiqueta1");
+	crea_inserta("strong","strong1","","etiqueta1");
+	crea_inserta("abbr","abbr1","*","strong1");
+	crea_inserta("select","entrada1","","parrafo1");
+	crea_inserta("option","contacto","Contacto","entrada1");
+	crea_inserta("option","sugerencia","Sugerencia","entrada1");
 
-		//Asignamos los atributos correspondientes
+	//Asignamos los atributos correspondientes
+	document.getElementById("parrafo1").for=("entrada1");
+	document.getElementById("abbr1").title="required";
+	document.getElementById("entrada1").selected="true";
 
-		document.getElementById("etiqueta"+i).for=("entrada"+i);
-		document.getElementById("abbr"+i).title="required";
-		document.getElementById("entrada"+i).name="name"+i;
-	}
+	//El ultimo elemento sera un text area para el msj
+	crea_inserta("p","parrafo2","","formulario");
+	crea_inserta("label","etiqueta2","","parrafo2");
+	crea_inserta("span","contenido2","","etiqueta2");
+	crea_inserta("strong","strong2","","etiqueta2");
+	crea_inserta("abbr","abbr2"," *","strong2");
+	crea_inserta("textarea","mensaje","","parrafo2");
+	document.getElementById("etiqueta2").for=("entrada2");
+	document.getElementById("abbr2").title="required";
+	document.getElementById("mensaje").name="Mensaje";
+	document.getElementById("mensaje").cols="50";
+	document.getElementById("mensaje").rows="5";
+	document.getElementById("mensaje").required="true";
 
 	//Asignamos contenido para facilitar la interaccion con el formulario
-	document.getElementById("contenido1").innerHTML="Tu Nombre";
-	document.getElementById("contenido2").innerHTML="Tu Correo";
-	document.getElementById("contenido3").innerHTML="Tu Mensaje";
+	document.getElementById("contenido1").innerHTML="  Asunto ";
+	document.getElementById("contenido2").innerHTML="Mensaje ";
+
+
+	//Agregamos dos botones
+	crea_inserta("p","parrafo3","","formulario");
+	crea_inserta("input","boton1","","parrafo3");
+	crea_inserta("input","boton2","","parrafo3");
+
+
+	document.getElementById("parrafo3").align="center";
+	document.getElementById("boton1").type="reset";
+	document.getElementById("boton1").value="Borrar";
+	document.getElementById("boton2").type="submit";
+	document.getElementById("boton2").value="Enviar";
+	
+
+	document.getElementById("formulario").method="POST";
+	document.getElementById("formulario").action="mailto:cristianprogramadorunsa@gmail.com?subject="+asunto;
+	document.getElementById("formulario").enctype="text/plain";
+	document.getElementById("formulario").target="_blank";
+
+	//cada vez que cambie de asunto se hara un cambio en el action del formulario
+	document.getElementById("entrada1").addEventListener("change",
+		function(){
+			var seleccion=document.getElementById("entrada1");
+			asunto=seleccion.options[seleccion.selectedIndex].innerText;
+			document.getElementById("formulario").action="mailto:cristianprogramadorunsa@gmail.com?subject="+asunto;
+	
+	});	
+	*/
+
+	
 
 }
-
-/**
-<p>
-		      <label for="name">
-		        <span>Nombre:</span>
-		        <strong><abbr title="required">*</abbr></strong>
-		      </label>
-		      <input type="text" id="name" name="username">
-		    </p>
-*/
 
 
 

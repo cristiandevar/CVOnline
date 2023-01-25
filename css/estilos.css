@@ -22,6 +22,14 @@ body{
 	overflow: scroll;
 }
 
+#mensaje{
+	resize : none;
+}
+
+#icono-indice{
+	width: 32px;
+}
+
 @media only screen and (max-width: 600px){
 	
 	div{
@@ -46,5 +54,8 @@ body{
 	#cuerpo{
 		height: max-height;
 	}
+	textarea{
+		width: 250px;
+}
 
 }
