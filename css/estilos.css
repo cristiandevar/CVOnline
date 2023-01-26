@@ -56,8 +56,8 @@ h1{
 	 	font-size: small;
 	 }
 	#indice{
-		height: auto;
-		overflow: auto;
+		height: 140px;
+		overflow: scroll;
 	}
 	#cuerpo{
 		height: max-height;
