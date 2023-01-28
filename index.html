@@ -12,11 +12,11 @@
 	<title>Proyecto Final</title>
 	
 </head>
-<body class="container">
+<body class="container-fluid">
 	<!--Barra de navegacion-->
-	<nav id="barranav" class="navbar navbar-expand-l bg-dark navbar-dark fixed-top col-12">
+	<nav id="barranav" class="navbar navbar-expand-l bg-dark navbar-dark">
 		<div class="container-fluid">
-			<a id="pagina-inicio" class="navbar-brand bg-dark" href="#indice" > <i class="fa-solid fa-house"></i></a>
+			<a id="pagina-inicio" class="navbar-brand bg-dark" href="#" > <i class="fa-solid fa-house"></i></a>
 
 			<button id="menu" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
 				<i class="fa-solid fa-bars"></i>
@@ -40,7 +40,7 @@
 
 					<li id="contacto" class="nav-item">
 						<a class="nav-link" href="#indice">
-							<i class="fa-solid fa-face-smile"></i> Contactame 
+							<i class="fa-solid fa-comments"></i> Contactame 
 						</a>
 					</li>
 
@@ -49,8 +49,12 @@
 			</div>
 				
 		</div>
+
+
+
 	</nav>
 
+	
 	<!--imagen, Nombre, titulo-->
 	<div id="header" class="row text-center bg-dark">
 		<div class="bg-dark col-11 col-lg-3">
@@ -58,11 +62,11 @@
 		</div>
 		<div class="bg-dark col-11 col-lg-9" id="presentacion">
 	  		<h1 >Clinton Gomez</h1>
-	  		<h2 >Estudiante</h2>
-	  		<h2>Tecnico Programador Universitario</h2>	  		
+	  		<h2 >Estudiante, 
+	  		Tecnico Programador Universitario</h2>	  		
 		</div>
 	</div>
-	
+		
 	<!--Guia e informacion de la pagina, Historial de conocimientos-->
 	<div class="row">
 		<div class="recuadro col-11 col-lg-3" id="indice">
@@ -78,6 +82,39 @@
 
 	</div>
 
+	<!--Pie de pagina-->
+	<footer id="footer" class="row bg-dark">
+			<div class="col-3 navbar">
+				<ul class="navbar-nav">
+					Conoceme mas
+					<li><a id="icono-fb"><i class="fa-brands fa-facebook"></i></a> 
+						<a id="icono-ig"><i class="fa-brands fa-instagram"></i></a> 
+						<a id="icono-tw"><i class="fa-brands fa-twitter"></i></a> 
+						<a id="icono-tg"><i class="fa-brands fa-telegram"></i></a>
+					</li>
+
+					<li>
+						<a id="icono-yt"><i class="fa-brands fa-youtube"></i></a>
+						<a id="icono-tt"><i class="fa-brands fa-tiktok"></i></a>
+						
+						
+					</li>
+
+				</ul>
+
+			</div>
+			<div class="col-3">
+				
+			</div>
+			<div class="col-6 navbar">
+				<ul class="navbar-nav">
+					<li>Licencia de Apache License, versión 2.0</li>
+				</ul>
+				
+			</div>
+	</footer>
+
+	
 	
 
 	<script src="./js/comportamiento.js"></script>

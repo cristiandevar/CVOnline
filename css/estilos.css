@@ -1,69 +1,117 @@
 body{
 	background-color: #F0FFFF;
 	font-family: 'Ubuntu', sans-serif;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 90vw;
+	margin: 0px;
+	padding: 0px;
 }
 
-#header{
-	margin: 50px 0px 0px 0px;
-	padding: 0px;
+h1{
+	font-weight: bold;
+	font-size: xx-large;
+}
 
-	
+h2{
+	font-weight: bold;
+	font-size: large;
+}
+
+.recuadro {
+	margin-top: 20px;
+	overflow-x: scroll;
+	height: 75vh;
+
+}
+
+
+#header{
+	margin:0px 0px 0px 0px;
+	padding: 0px;
+}
+
+#perfil{
+	align-content: center;
 }
 
 #presentacion{
 	color:white;
 	max-height: auto;
-
 }
 
-h1{
-	font-weight: bold;
-}
-
-#cuerpo {
-	margin-left: 5px;
-}
-
-.recuadro {
-	margin-top: 10px;
-	height: 280px;
-	overflow: scroll;
-}
-
-#mensaje{
-	resize : none;
-}
 
 #indice{
 	font-style: italic;
+	border: solid 1px;
+	margin-left: 15px;
+	width: 20vw;
 }
 
-@media only screen and (max-width: 600px){
+#cuerpo {
+	margin-left: 10px;
+	width: 70vw;
+
+}
+
+#footer{
+	margin: 20px 0px 0px 0px;
+	color: rgb(110, 110, 110);
+	font-size: small;
 	
-	div{
-		max-width: 100%;
-	}
-	#fotoperfil{
-		align: center;
-	}
-	#presentacion.h1{
-		text-align: left;
-		margin-left: 10px;
+}
+
+#footer p{
+	font-size: x-small;
+	text-align: bottom;
+}
+
+#footer a{
+	color: rgb(110, 110, 110) ;
+}
+
+
+#logo{
+	height: 16px;
+	width: 16px;
+}
+
+@media only screen and (max-width: 730px) and (orientation:portrait){
+
+	body{
 		font-size: large;
+
 	}
-	 #presentacion.h2{
-	 	text-align: left;
-	 	font-size: small;
-	 }
+
+	footer{
+		height: 100px;
+		font-size: x-small
+	}
+
+	#fotoperfil{
+		align-items: center;
+		width: 25vw;
+		height: auto;
+	}
+
+	#presentacion h1{
+		text-align: left;
+	}
+
+	#presentacion h2{
+		text-align: left;
+		font-size: medium;
+	}
+
 	#indice{
-		height: 140px;
+		height: 20vh;
+		width: 90vw;
 		overflow: scroll;
 	}
+
 	#cuerpo{
 		height: max-height;
+		width: 90vw;
 	}
-	textarea{
-		width: 250px;
 }
 
-}

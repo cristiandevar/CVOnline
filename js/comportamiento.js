@@ -1,6 +1,6 @@
 //Al abrir pagina
 pagina_inicio();
-
+carga_redes_sociales();
 
 //Asignacion de Listener
 document.getElementById("pagina-inicio").addEventListener('click',pagina_inicio);
@@ -12,11 +12,11 @@ document.getElementById("contacto").addEventListener('click',contactar);
 
 //Funcione
 
-function cerrar_menu(){
-	document.getElementById("menu").click();
+function cerrar_menu(){document.getElementById("menu").click();
 }
 
-function crea_inserta(nombre,id_elemento,contenido,id_destino){
+function crea_inserta(
+	nombre,id_elemento,contenido,id_destino){
 	let elemento=document.createElement(nombre);
 	const destino=document.getElementById(id_destino);
 	
@@ -25,8 +25,7 @@ function crea_inserta(nombre,id_elemento,contenido,id_destino){
 	destino.appendChild(elemento);
 }
 
-function limpia(id_elemento){
-	document.getElementById(id_elemento).innerHTML="";	
+function limpia(id_elemento){document.getElementById(id_elemento).innerHTML="";	
 }
 
 function crea_indice(){
@@ -42,6 +41,17 @@ function carga_items(cant,lista){
 		crea_inserta("li",id_item,"",lista);
 	}
 }
+
+function carga_redes_sociales(){
+	document.getElementById("icono-fb").href="https://www.facebook.com/";
+	document.getElementById("icono-ig").href="https://www.nstagram.com/";
+	document.getElementById("icono-tw").href="https://www.titter.com/";
+	document.getElementById("icono-tg").href="https://web.telegram.org/";
+	document.getElementById("icono-yt").href="https://www.youtube.com/";
+	document.getElementById("icono-tt").href="https://www.tiktok.com/";
+
+}
+
 
 function pagina_inicio(){
 	var elemento,texto;
@@ -252,11 +262,7 @@ function linea_tiempo(){
 	document.getElementById("estudio5").innerHTML=lugar;
 	document.getElementById("periodo2-5").innerHTML=periodo;
 	document.getElementById("descripcion2-5").innerHTML=descripcion;
-
-
-
 }
-
 
 function contactar(){
 	var texto;
@@ -279,7 +285,7 @@ function contactar(){
 	document.getElementById("item2").href="#wpp";
 
 	//Ponemos un link directo para chatear con el correo de la persona
-	document.getElementById("envia-correo").href="https://mailto:clinton.gomez@example.com?subject=Contacto-Sugerencia";
+	document.getElementById("envia-correo").href="mailto:clinton.gomez@example.com?subject=Contacto-Sugerencia";
 	document.getElementById("envia-correo").target="_blank";
 
 	//Ponemos un link directo para chatear con el numero de la persona (111) 222-3344
@@ -369,9 +375,6 @@ function contactar(){
 	
 	});	
 	*/
-
-	
-
 }
 
 
