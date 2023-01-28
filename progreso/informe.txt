@@ -1,0 +1,107 @@
+CV Onnline - Argentina Programa - Curso FrontEnd
+
+Proyecto realizado por Cristian Franco
+
+Informe del progreso
+
+Comenzamos enumerando los datos que queriamos mostrar y los elementos que utilizariamos
+	Datos:
+	- Foto
+	- Nombre completo
+	- Profesion
+	- Conocimientos, Experiencias laborales
+	- Certificados, numeros de referencias
+	- Lineas de Contacto
+
+	Elementos:
+	- <img> para la foto de la persona, esta debera ser del tamaño adecuado y ser lo primero que este a la vista
+	- <h1><h2><h3><p> para los titulos subtitulos y detalles que necesitemos plasmar. Esto sera util para datos como nombre, educacion, experiencia laboral, etc.
+	- <a> para los links necesarios.
+	- <ul><li> para enlistar elementos del indice u otras secciones
+	- <navbar> para una barra de navegacion y facilitar el recorrido de la pagina.
+	- <div> contenedores para separar la pagina en secciones, y para que esas secciones a la vez puedan contener subsecciones. Al principio pense en 6 secciones principales
+		luego se fueron reduciendo.
+
+
+Seguido realizamos un diseño sobre papel (fotografias incluidas en la carpeta informe), en el cual plasmamos primeramente 6 secciones.
+	1) Seccion de fotografia
+	2) Seccion de nombre, profesion y contactos
+	3) Seccion donde pondre una linea de tiempo que seria como una barra de navegacion o indice
+	4) Seccion donde detallaremos cada item de la linea de tiempo
+	5) Seccion de sugerencia
+	6) Seccion de contacto
+
+Estas 6 secciones se redujeron luego de investigar en como habria que organizar la informacion. Segun articulos variados deben haber 3 secciones principales un cabezal (header) un cuerpo
+principal (main) y un pie de pagina (footer). Por lo que nuestro diseño y organizacion cambio, tomamos las 3 secciones mencionadas y la dividimos como sigue:
+	1) Header:
+		- barra de navegacion, incluyendo un indice principal
+	2) Main:
+		- fotografia, nombre completo y profesion
+		- indice secundario
+		- cuerpo principal
+	3) Footer:
+		- redes sociales y detalles sobre el desarrollo de la pagina
+
+Luego de estructurar la pagina mediante el uso de HTML pasamos a pensar en los comportamientos.
+La dinamica de la pagina es simple aunque codificarla fue un desafio, pasare a enlistar los comportamientos los cuales cambian solamente el contenido principal (main)
+La barra de navegacion cumple la tarea de mostrarnos 4 links direccionados a la misma pagina modificando el contenido principal:
+		- Inicio: 
+			Agrega al indice inicial un item; Bienvenido
+			Agrega en el cuerpo un mensaje de bienvenida.
+		- Datos personales:
+			Agrega al indice inicial 2 items: datos personales y habilidades
+			Agrega al cuerpo:
+				2 titulos (mi persona, mis habilidades)
+				1 lista (lista de datos)
+				x cantidad de subtitulos correspondientes a las habilidades que la persona tiene
+		- Linea de tiempo:
+			Agrega al indice 2 listas: 
+				Trabajo: que tiene x items correspondientes a la cantidad de trabajos que tiene la persona
+				Educacion: que tiene x items correspondientes a la cantidad de estudios que tiene la persona
+			Agrega al cuerpo:
+				x Titulos correspodientes a los trabajos y estudios de la persona
+				x Subtitulos correspondientes al periodo en que ocurrieron los trabajos o estudios
+		- Contactame:
+			Agrega al indice:
+				link para enviar un mail al correo de la persona
+				link para enviar Whatsapp al numero de la persona
+			Agrega al cuerpo:
+				Mensaje orientativo
+Los comportamientos se encuentran en el archivo "comportamiento.js" de la carpeta JS.
+Contiene 4 funciones principales las cuales limpian el indice y el cuerpo para luego cambiar el 
+contenido de los mencionados correspondientes a la descripcion anterior. Por ultimo cierran el menu.
+		- pagina_inicio() 
+		- datos_personales()
+		- linea_tiempo()
+		- contactame()
+Contiene ademas funciones secundarias pero que nos sirven para reutilizar codigo
+		- cerrar_menu(): clickea el boton de barra desplegable para que simule el cierre del menu
+		- crea_inserta(nombre,id_elemento,contenido,id_destino): crea un elemento HTML de nombre "nombre" con id = "id_elemento", conteniendo el texto dado por "contenido" y lo crea
+			dentro de otro elemento de id = "id_destino"
+		- limpia(id_elemento): coloca dentro del elemento HTML con id = id_elemento un texto vacio
+		- crea_indice(): Inserta un h3 conteniendo el texto Indice, y un separador, dentro de "lista-indice" dentro de "indice"
+		- carga_items(cant,lista):  mediante un for inserta "cant" elementos li(item) dentro de "lista"
+		- carga_redes_sociales(): esta funcion escribe en los iconos del footer las direcciones correspondientes a las redes sociales de la persona
+
+
+
+Mejoras y comentarios
+
+Fue un camino largo el desarrollar este CV Onnline, primeramente el cambio de diseño provino del hecho de no poder colocar las 6 secciones de la manera que queria, y al investigar
+descubrir que una pagina web organizada de determinada manera facilitaria al usuario la navegacion y la visualizacion del contenido, y a mi me facilitaria el desarrollo.
+Cambiamos a ultimo momento muchas cosas.
+	Dimensiones: Primero las considere como pixeles (px) pero luego modifique dichas dimensiones a altura de pantalla (vh) y ancho de pantalla (vw) para poder tener un contenido 
+		dinamico y adaptable, consideramos que para un celular y tablet (max-width: 800) cambiaria pero que las pantallas mas grandes mantendrian el mismo diseño.
+	Iconos: Quisimos proporcionarle iconos a varias cosas, primero lo hicimos con la barra de navegacion pero luego los agregamos a los items dentro del indice y a las redes sociales
+	Fonts: Fuente de textos, eligiendo Ubuntu 300,400 e italic 300.
+Hay varias cosas que mejorar
+	Por ejemplo cuando uno abre el menu y aprieta el boton inicio entonces el menu queda abierto
+	Cuando esta de modo horizontal se comporta como una pantalla grande
+	Cuando presionamos el link de correo en el indice de contactame nos lleva a otra pagina y cuando vuelve hacia atras nos lleva al inico de la pagina y no al contenido de contactame
+	Tampoco le di uso al webstorage ni a las APIs para recoger informacion de archivos JSON
+	Me centre mas en el comportamiento y en la estructuracion. Recien al final me concentre en el estilo y en el dinamismo.
+Comentarios
+Me costo mucho comprender la relacion entre los documentos, aprender la sintaxis y creo que mi mas grande error fue empezar casi todo desde cero, luego investigando conoci las distintas
+plantillas que existen las cuales me pudieron haber facilitado las cosas, pero tambien creo que fue algo desafiante y que me ayudo afianzando los conocimientos aprendidos durante el curso.
+
+Sin mas que agregar le agradezco a todo aquel que vea mi proyecto y espero poder mejorarlo con el transcurso del tiempo
