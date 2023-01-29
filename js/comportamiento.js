@@ -8,9 +8,7 @@ document.getElementById("datos-personales").addEventListener('click',datos_perso
 document.getElementById("linea-tiempo").addEventListener('click',linea_tiempo);
 document.getElementById("contacto").addEventListener('click',contactar);
 
-
-
-//Funcione
+//Funciones secundarias
 
 function cerrar_menu(){document.getElementById("menu").click();
 }
@@ -52,7 +50,7 @@ function carga_redes_sociales(){
 
 }
 
-
+//funciones principales
 function pagina_inicio(){
 	var elemento,texto;
 
@@ -61,21 +59,14 @@ function pagina_inicio(){
 	limpia("cuerpo");
 	crea_indice();
 
-	//carga 2 items al indice
-	carga_items(2,"lista-indice");
+	//carga 1 items al indice
+	carga_items(1,"lista-indice");
 
 	//modificamos el icono de bienvenidos y damos referencia al link
 	document.getElementById("item1").innerHTML="<i class='fa-solid fa-hand'></i>";
 	crea_inserta("a","link1"," Bienvenido","item1");
 	elemento=document.getElementById("link1");
 	elemento.href="#bienvenido";
-	
-	//modificamos el icono de autor y damos referencia al link
-	document.getElementById("item2").innerHTML="<i class='fa-solid fa-code'></i>";
-	crea_inserta("a","link2"," Autor","item2");
-	elemento=document.getElementById("link2");
-	elemento.href="#autor";
-	
 
 	//Cargamos el cuerpo
 	crea_inserta("h1","bienvenido","Bienvenido/a a 'Mi CV Onnline'","cuerpo");
@@ -84,13 +75,10 @@ function pagina_inicio(){
 	texto="Aqui iria un texto de bienvenida, dando a conocer el porque de la pagina, para quien esta dirigida, etc. Nosotros utilizaremos un texto generado de la pagiga https://www.lipsum.com/. Tambien recuerde que si quiere agregar saltos de linea debe que utilizar el elemento 'br' para que surja efecto en el documento HTML";
 	texto+="<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu rutrum diam, nec consectetur ante. Etiam interdum justo et ante venenatis, eu venenatis justo suscipit. Nulla rhoncus sit amet turpis in malesuada. Proin ultrices aliquet sem, in tristique lectus. Ut ac magna tortor. Phasellus dapibus odio non venenatis consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras sed nisl sed sapien posuere porta. Nullam ultricies eros at ultrices placerat. Donec sollicitudin, est ac sollicitudin tempus, turpis felis tristique orci, eget consectetur dolor sem feugiat mi. Vivamus sem ante, interdum quis fringilla at, rutrum scelerisque sem. Curabitur tempus lectus vitae mauris luctus lobortis. Suspendisse potenti. Donec diam arcu, tristique sed erat gravida, suscipit ultrices dui. Maecenas vehicula magna non sodales finibus. Etiam porta nulla in urna feugiat scelerisque. Ut id sollicitudin ligula. Quisque in nunc in enim scelerisque ultrices. Cras nec auctor nulla. Nunc efficitur bibendum orci tincidunt faucibus. Ut imperdiet feugiat ante non posuere. Nunc tellus dui, vestibulum quis lorem vel, vulputate dapibus eros. Curabitur molestie sapien in nibh egestas, at venenatis nisl hendrerit. Nullam pharetra sollicitudin faucibus. Integer mollis maximus est eu cursus. Etiam libero lectus, euismod eu erat in, sodales tincidunt ligula. Morbi ullamcorper massa ac mi cursus malesuada. Vestibulum feugiat fermentum magna, nec facilisis mi. Vestibulum blandit auctor finibus";
 	document.getElementById("parrafo1").innerHTML=texto;
-
-	crea_inserta("h1","autor","Desarrollado por Franco Cristian","cuerpo");
-	crea_inserta("p","","Año 2023, Febrero 1","cuerpo");
 }
 
 function datos_personales(){
-	var elemento;
+	var elemento, descripcion;
 	//cerramos el menu desplegable e iniciamos el indice
 	cerrar_menu();
 	limpia("lista-indice");
@@ -101,7 +89,7 @@ function datos_personales(){
 	carga_items(2,"lista-indice");
 
 
-	//modificamos el icono de persona y damos referencia al link
+	//modificamos el icono de persona y habilidades, y damos referencia a los links
 	elemento=document.getElementById("item1");
 	elemento.id="persona";
 	elemento.innerHTML="<i class='fa-solid fa-address-card'></i>";
@@ -113,15 +101,12 @@ function datos_personales(){
 	elemento.id="habilidades";
 	elemento.innerHTML="<i class='fa-solid fa-brain'></i>";
 	crea_inserta("a","link2"," Habilidades","habilidades");
-	
 	elemento=document.getElementById("link2");
-	//elemento.class="nav-link";
 	elemento.href="#mis-habilidades";
 
-	//Crea Tittulo y enlista los datos personales
+	//Crea Titulo y enlista los datos personales
 	crea_inserta("h1","mi-persona","Mis Datos","cuerpo");
 	crea_inserta("ul","lista-mi-persona","","cuerpo");
-
 	carga_items(6,"lista-mi-persona");
 	document.getElementById("item1").innerHTML="Nombre: Clinton Brat Gomez";
 	document.getElementById("item2").innerHTML="Edad:\t27 años";
@@ -132,52 +117,58 @@ function datos_personales(){
 	
 	//Crera titulos, subtitulos y describe habilidades
 	crea_inserta("h1","mis-habilidades","Mis habilidades","cuerpo");
+
 	crea_inserta("h2","","Habilidad1","cuerpo");
-	crea_inserta("p","","Explicacion1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
+	descripcion="Explicacion1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
+	crea_inserta("p","",descripcion,"cuerpo");
+
 	crea_inserta("h2","","Habilidad2","cuerpo");
-	crea_inserta("p","","Explicacion2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
+	descripcion="Explicacion2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
+	crea_inserta("p","",descripcion,"cuerpo");
+
 	crea_inserta("h2","","Habilidad3","cuerpo");
-	crea_inserta("p","","Explicacion3 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
+	descripcion="Explicacion3 bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
+	crea_inserta("p","",descripcion,"cuerpo");
+
 	crea_inserta("h2","","Habilidad4","cuerpo");
-	crea_inserta("p","","Explicacion4 bla bla bla bla bla bla bla bla bla bla bla bla bla bla","cuerpo");
+	descripcion="Explicacion4 bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
+	crea_inserta("p","",descripcion,"cuerpo");
 }
 
 function linea_tiempo(){
 	var cargo,periodo,descripcion,lugar;
 	//cerramos el menu desplegable e iniciamos el indice 
 	cerrar_menu();
-
 	limpia("lista-indice");
 	limpia("cuerpo");
-
 	crea_indice();
-	//Ceamos dos listas, una para los tranajos y la otra para los estudios
+
+	//Ceamos dos listas, una para los trabajos y otra para los estudios
 	crea_inserta("ul","lista-trabajo","","lista-indice");
 	crea_inserta("hr","","","lista-indice");
 	crea_inserta("ul","lista-estudio","","lista-indice");
 
 	elemento=document.getElementById("lista-trabajo").innerHTML="<i class='fa-solid fa-hammer'></i> Trabajos";
 	elemento=document.getElementById("lista-estudio").innerHTML="<i class='fa-solid fa-graduation-cap'></i> Estudios";
+	
 	//Cargamos el indice con items representando los años que queremos mostrar, en nuestro caaso son 3 de trabajo y 5 de estudios
 	carga_items(3,"lista-trabajo");
+	
 	//Creamos los links 
-
 	crea_inserta("a","trabajo1","2019","item1");
 	document.getElementById("trabajo1").href="#cargo1";
 	crea_inserta("a","trabajo2","2020","item2");
 	document.getElementById("trabajo2").href="#cargo2";
 	crea_inserta("a","trabajo3","2022","item3");
 	document.getElementById("trabajo3").href="#cargo3";
+	
 	//modifica id para no confundirlos con los de la lista de estudios
 	document.getElementById("item1").id="item-trabajo1";
 	document.getElementById("item2").id="item-trabajo2";
 	document.getElementById("item3").id="item-trabajo3";
 
-	
-
 	//Repetimos los pasos para crear la lista estudios
 	carga_items(5,"lista-estudio");
-
 	crea_inserta("a","lugar1","Primaria","item1");
 	document.getElementById("lugar1").href="#estudio1";
 	crea_inserta("a","lugar2","Secundaria","item2");
@@ -189,15 +180,13 @@ function linea_tiempo(){
 	crea_inserta("a","lugar5","Curso 2","item5");
 	document.getElementById("lugar5").href="#estudio5";
 
-
-
-
 	//Creamos los titulos, subtitulos y las descripcciones de los cargos
 	for (var i = 1; i <= 3; i++) {
 		crea_inserta("h2","cargo"+i,"","cuerpo");
 		crea_inserta("h4","periodo1-"+i,"","cuerpo");
 		crea_inserta("p","descripcion1-"+i,"","cuerpo");
 	}
+	
 	//Modificamos el contenido de los cargos perioddos y descripciones
 	cargo="Mantenimiento - Biblioteca UNSa";
 	periodo="Marzo - Julio (2019)";
@@ -219,7 +208,6 @@ function linea_tiempo(){
 	document.getElementById("cargo3").innerHTML=cargo;
 	document.getElementById("periodo1-3").innerHTML=periodo;
 	document.getElementById("descripcion1-3").innerHTML=descripcion;
-
 
 	//Creamos los lugares, periodos y otros detalles 
 	for (var i = 1; i <= 5; i++) {
@@ -301,13 +289,10 @@ function contactar(){
 	document.getElementById("parrafo").innerHTML=texto;
 
 	document.getElementById("parrafofin").align="center";	
-	document.getElementById("parrafofin").innerHTML="<i class='fa-solid fa-cat'></i>  Gracias por ver mi CV Onnline  <i class='fa-solid fa-dog'></i>";	
-
-
-
+	document.getElementById("parrafofin").innerHTML="<i class='fa-solid fa-cat'></i>  Gracias por ver mi CV Onnline  <i class='fa-solid fa-dog'></i>";
 
 	/**
-
+	Este comentario lo deajmos para modificarlo en otro momento, nos sirve para crear un formulario con la intencion de mandar un email
 	//Se creara un formulario
 	crea_inserta("form","formulario","","cuerpo");
 	//creamos un titulo para el formulario y un parrafo indicativo

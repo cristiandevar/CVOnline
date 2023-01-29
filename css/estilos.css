@@ -18,13 +18,17 @@ h2{
 	font-size: large;
 }
 
+h3{
+	font-weight: bold;
+	font-size: small;
+}
+
 .recuadro {
 	margin-top: 20px;
 	overflow-x: scroll;
 	height: 75vh;
 
 }
-
 
 #header{
 	margin:0px 0px 0px 0px;
@@ -39,7 +43,6 @@ h2{
 	color:white;
 	max-height: auto;
 }
-
 
 #indice{
 	font-style: italic;
@@ -70,13 +73,7 @@ h2{
 	color: rgb(110, 110, 110) ;
 }
 
-
-#logo{
-	height: 16px;
-	width: 16px;
-}
-
-@media only screen and (max-width: 730px) and (orientation:portrait){
+@media only screen and (max-width: 800px) and (orientation:portrait){
 
 	body{
 		font-size: large;
