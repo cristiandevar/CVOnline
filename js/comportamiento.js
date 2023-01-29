@@ -119,19 +119,19 @@ function datos_personales(){
 	crea_inserta("h1","mis-habilidades","Mis habilidades","cuerpo");
 
 	crea_inserta("h2","","Habilidad1","cuerpo");
-	descripcion="Explicacion1 bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
+	descripcion="Suspendisse potenti. Praesent bibendum vestibulum lorem, at placerat erat. Aenean sit amet pellentesque ante, quis viverra mauris. Aliquam erat volutpat. Proin vulputate nec felis id porta. Phasellus convallis, nisl eget imperdiet aliquam, mauris lectus blandit ipsum, in lacinia metus arcu et lacus. Sed sit amet sem molestie, feugiat erat ac, vestibulum risus. Sed metus ligula, imperdiet bibendum eleifend eget, pretium vel lorem. Donec dictum vulputate justo vitae maximus. ";
 	crea_inserta("p","",descripcion,"cuerpo");
 
 	crea_inserta("h2","","Habilidad2","cuerpo");
-	descripcion="Explicacion2 bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
+	descripcion="In eu ante nec mi auctor condimentum. Nulla facilisi. Donec scelerisque est tortor, a iaculis dui porttitor ac. Nam sed auctor ipsum. Fusce at quam dignissim, eleifend mi quis, tincidunt leo. In tincidunt lacus vel ante porttitor fermentum. Nam pretium felis vel facilisis varius. Morbi eu felis in orci posuere egestas. Suspendisse eget augue id neque fringilla luctus tempor sit amet sem.";
 	crea_inserta("p","",descripcion,"cuerpo");
 
 	crea_inserta("h2","","Habilidad3","cuerpo");
-	descripcion="Explicacion3 bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
+	descripcion=" In varius turpis sed augue elementum, vel consectetur magna ultrices. Sed vitae eros aliquam, dignissim magna quis, interdum dui. Morbi eget nibh finibus, dapibus diam id, luctus urna. Nunc porttitor eu massa ut fringilla. Maecenas maximus, augue quis varius rutrum, lorem orci interdum risus, vel porttitor lacus mi pretium lacus. Cras iaculis placerat tortor. Etiam eu condimentum enim. Donec sit amet ex tincidunt, pretium est a, fermentum turpis. Suspendisse id nunc turpis. Sed facilisis varius elit et congue.";
 	crea_inserta("p","",descripcion,"cuerpo");
 
 	crea_inserta("h2","","Habilidad4","cuerpo");
-	descripcion="Explicacion4 bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
+	descripcion="Quisque tristique ac elit eu suscipit. Vestibulum id mi sagittis, euismod tellus ut, blandit risus. Proin sollicitudin dapibus ligula, eget viverra libero. Nam id mi ultrices, dignissim elit sed, ultricies velit. Mauris vitae nisi sapien. Donec vitae bibendum nisl. Phasellus dictum elementum tempor. Praesent nec lacus enim. Nulla ultricies orci sit amet efficitur interdum. In eleifend et nibh quis tincidunt. Vestibulum ut lacus quis quam finibus facilisis vel vitae urna. Aenean ac eros vel orci sollicitudin feugiat at eget eros. Etiam porta venenatis dui, nec sollicitudin augue rhoncus ut. ";
 	crea_inserta("p","",descripcion,"cuerpo");
 }
 

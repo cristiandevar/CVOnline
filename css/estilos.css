@@ -46,15 +46,14 @@ h3{
 
 #indice{
 	font-style: italic;
-	border: solid 1px;
-	margin-left: 15px;
+	border-top: solid 1px;
+	border-left: solid 1px;
+	border-bottom: solid 1px;
 	width: 20vw;
 }
 
 #cuerpo {
-	margin-left: 10px;
 	width: 70vw;
-
 }
 
 #footer{
@@ -73,11 +72,10 @@ h3{
 	color: rgb(110, 110, 110) ;
 }
 
-@media only screen and (((max-width: 800px) and (orientation:portrait))){
+@media only screen and (max-width: 800px){
 
 	body{
 		font-size: large;
-
 	}
 
 	footer{
@@ -92,23 +90,23 @@ h3{
 	}
 
 	#presentacion h1{
-		text-align: left;
+		text-align: center;
 	}
 
 	#presentacion h2{
-		text-align: left;
+		text-align: center;
 		font-size: medium;
 	}
 
 	#indice{
-		height: 20vh;
-		width: 90vw;
+		height: 30vh;
+		width: 100vw;
 		overflow: scroll;
 	}
 
 	#cuerpo{
 		height: max-height;
-		width: 90vw;
+		width: 100vw;
 	}
 }
 
