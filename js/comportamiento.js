@@ -69,7 +69,7 @@ function pagina_inicio(){
 	elemento.href="#bienvenido";
 
 	//Cargamos el cuerpo
-	crea_inserta("h1","bienvenido","Bienvenido/a a 'Mi CV Onnline'","cuerpo");
+	crea_inserta("h1","bienvenido","Bienvenido/a a 'Mi CV Online'","cuerpo");
 	crea_inserta("h2","","Proyecto final en FrontEnd","cuerpo");
 	crea_inserta("p","parrafo1","","cuerpo");
 	texto="Aqui iria un texto de bienvenida, dando a conocer el porque de la pagina, para quien esta dirigida, etc. Nosotros utilizaremos un texto generado de la pagiga https://www.lipsum.com/. Tambien recuerde que si quiere agregar saltos de linea debe que utilizar el elemento 'br' para que surja efecto en el documento HTML";
@@ -285,11 +285,11 @@ function contactar(){
 	crea_inserta("p","parrafofin","","cuerpo");
 	
 
-	texto="Enviame un correo o un Wpp por medio de los enlaces ubicados en el Indice, Estare agradecido y dispuesto a responder lo mas antes posible. Desde ya te agradezco la visita a este CV Onnline y espero hayas encontrado lo que buscas. Espero tus mensajes.";
+	texto="Enviame un correo o un Wpp por medio de los enlaces ubicados en el Indice, Estare agradecido y dispuesto a responder lo mas antes posible. Desde ya te agradezco la visita a este CV Online y espero hayas encontrado lo que buscas.";
 	document.getElementById("parrafo").innerHTML=texto;
 
 	document.getElementById("parrafofin").align="center";	
-	document.getElementById("parrafofin").innerHTML="<i class='fa-solid fa-cat'></i>  Gracias por ver mi CV Onnline  <i class='fa-solid fa-dog'></i>";
+	document.getElementById("parrafofin").innerHTML="<i class='fa-solid fa-dog'></i><i class='fa-solid fa-cat'></i>  Agradezco tu visita <i class='fa-solid fa-dog'></i><i class='fa-solid fa-cat'></i>";
 
 	/**
 	Este comentario lo deajmos para modificarlo en otro momento, nos sirve para crear un formulario con la intencion de mandar un email

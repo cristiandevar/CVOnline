@@ -1,4 +1,3 @@
-
 body {
 	background-color : #f0ffff;
 	font-family : 'Ubuntu', sans-serif;
@@ -10,15 +9,13 @@ body {
 }
 h1 {
 	font-weight : bold;
-	font-size : xx-large;
+	font-size : 4vw;
 }
 h2 {
 	font-weight : bold;
-	font-size : large;
 }
 h3 {
 	font-weight : bold;
-	font-size : small;
 }
 .recuadro {
 	margin-top : 20px;
@@ -29,8 +26,9 @@ h3 {
 	margin : 0;
 	padding : 0;
 }
-#perfil {
-	align-content : center;
+#fotoperfil{
+	height: 200px;
+	width: 200px;
 }
 #presentacion {
 	color : white;
@@ -41,6 +39,7 @@ h3 {
 	border-left : 1px solid;
 	border-bottom : 1px solid;
 	width : 20vw;
+	font-size: 1.5vw;
 }
 #cuerpo {
 	width : 70vw;
@@ -57,39 +56,50 @@ h3 {
 #footer a {
 	color : rgb(110, 110, 110);
 }
-	
 
 @media only screen and (max-width: 800px){
 	body {
-	font-size : large;
+		font-size : large;
+	}
+	h1{
+		font-size: xx-large;
+	}
+	h2{
+		font-size: x-large;
+	}
+	h3{
+		font-size: large;
 	}
 	p{
-		line-height: calc(font-size * 1,2);
+		font-size: medium;
+	}
+	a{
+		font-size: medium;
 	}
 	footer {
-	align-content: center;
-	height : auto;
-	font-size : x-small;
+		align-content: center;
+		height : auto;
+		font-size : x-small;
 	}
 	#fotoperfil {
-	align-items : center;
-	width : 25vw;
-	height : auto;
+		align-items : center;
+		width : 25vw;
+		height : auto;
 	}
 	#presentacion h1 {
-	text-align : center;
+		text-align : center;
 	}
 	#presentacion h2 {
-	text-align : center;
-	font-size : medium;
+		text-align : center;
+		font-size : medium;
 	}
 	#indice {
-	height : 30vh;
-	width : 100vw;
-	overflow : scroll;
+		height : 30vh;
+		width : 100vw;
+		overflow : scroll;
 	}
 	#cuerpo {
-	width : 100vw;
+		width : 100vw;
 	}
 }
 
