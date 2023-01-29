@@ -31,7 +31,7 @@ h3{
 }
 
 #header{
-	margin:0px 0px 0px 0px;
+	margin: 0px;
 	padding: 0px;
 }
 
@@ -73,7 +73,7 @@ h3{
 	color: rgb(110, 110, 110) ;
 }
 
-@media only screen and (max-width: 800px) and (orientation:portrait){
+@media only screen and (((max-width: 800px) and (orientation:portrait))){
 
 	body{
 		font-size: large;

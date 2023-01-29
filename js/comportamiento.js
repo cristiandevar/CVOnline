@@ -28,7 +28,7 @@ function limpia(id_elemento){document.getElementById(id_elemento).innerHTML="";
 
 function crea_indice(){
 	
-	crea_inserta("h3","titulo-indice","Indice","lista-indice");
+	crea_inserta("h2","titulo-indice","Indice","lista-indice");
 	crea_inserta("hr","","","lista-indice");
 }
 
