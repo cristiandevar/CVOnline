@@ -1,112 +1,95 @@
-body{
-	background-color: #F0FFFF;
-	font-family: 'Ubuntu', sans-serif;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	width: 90vw;
-	margin: 0px;
-	padding: 0px;
-}
 
-h1{
-	font-weight: bold;
-	font-size: xx-large;
+body {
+	background-color : #f0ffff;
+	font-family : 'Ubuntu', sans-serif;
+	overflow-y : scroll;
+	overflow-x : hidden;
+	width : 90vw;
+	margin : 0;
+	padding : 0;
 }
-
-h2{
-	font-weight: bold;
-	font-size: large;
+h1 {
+	font-weight : bold;
+	font-size : xx-large;
 }
-
-h3{
-	font-weight: bold;
-	font-size: small;
+h2 {
+	font-weight : bold;
+	font-size : large;
 }
-
+h3 {
+	font-weight : bold;
+	font-size : small;
+}
 .recuadro {
-	margin-top: 20px;
-	overflow-x: scroll;
-	height: 75vh;
-
+	margin-top : 20px;
+	overflow-x : scroll;
+	height : 75vh;
 }
-
-#header{
-	margin: 0px;
-	padding: 0px;
+#header {
+	margin : 0;
+	padding : 0;
 }
-
-#perfil{
-	align-content: center;
+#perfil {
+	align-content : center;
 }
-
-#presentacion{
-	color:white;
-	max-height: auto;
+#presentacion {
+	color : white;
 }
-
-#indice{
-	font-style: italic;
-	border-top: solid 1px;
-	border-left: solid 1px;
-	border-bottom: solid 1px;
-	width: 20vw;
+#indice {
+	font-style : italic;
+	border-top : 1px solid;
+	border-left : 1px solid;
+	border-bottom : 1px solid;
+	width : 20vw;
 }
-
 #cuerpo {
-	width: 70vw;
+	width : 70vw;
 }
-
-#footer{
-	margin: 20px 0px 0px 0px;
-	color: rgb(110, 110, 110);
-	font-size: small;
+#footer {
+	margin : 20px 0 0 0;
+	padding: 10px;
+	color : rgb(110, 110, 110);
+	font-size : small;
+}
+#footer p {
+	font-size : x-small;
+}
+#footer a {
+	color : rgb(110, 110, 110);
+}
 	
-}
-
-#footer p{
-	font-size: x-small;
-	text-align: bottom;
-}
-
-#footer a{
-	color: rgb(110, 110, 110) ;
-}
 
 @media only screen and (max-width: 800px){
-
-	body{
-		font-size: large;
+	body {
+	font-size : large;
 	}
-
-	footer{
-		height: 100px;
-		font-size: x-small
+	p{
+		line-height: calc(font-size * 1,2);
 	}
-
-	#fotoperfil{
-		align-items: center;
-		width: 25vw;
-		height: auto;
+	footer {
+	align-content: center;
+	height : auto;
+	font-size : x-small;
 	}
-
-	#presentacion h1{
-		text-align: center;
+	#fotoperfil {
+	align-items : center;
+	width : 25vw;
+	height : auto;
 	}
-
-	#presentacion h2{
-		text-align: center;
-		font-size: medium;
+	#presentacion h1 {
+	text-align : center;
 	}
-
-	#indice{
-		height: 30vh;
-		width: 100vw;
-		overflow: scroll;
+	#presentacion h2 {
+	text-align : center;
+	font-size : medium;
 	}
-
-	#cuerpo{
-		height: max-height;
-		width: 100vw;
+	#indice {
+	height : 30vh;
+	width : 100vw;
+	overflow : scroll;
+	}
+	#cuerpo {
+	width : 100vw;
 	}
 }
 
